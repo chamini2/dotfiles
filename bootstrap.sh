@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
+
 cd "$(dirname "${BASH_SOURCE}")"
+
+# Vim files
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
+
 git pull origin master
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
