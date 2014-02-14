@@ -10,7 +10,7 @@ alias g="git"
 alias s="subl ."
 alias o="open"
 
-# GCC for GCC 4.2
+# GCC for GCC-4.2
 alias gcc="gcc-4.2"
 
 # Sublime Text
