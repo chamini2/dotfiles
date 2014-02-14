@@ -11,6 +11,7 @@ installcask daisydisk
 installcask dropbox
 installcask google-chrome
 installcask google-drive
+installcask igetter
 installcask img2icns
 installcask iterm2
 installcask keka
