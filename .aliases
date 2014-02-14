@@ -10,6 +10,9 @@ alias g="git"
 alias s="subl ."
 alias o="open"
 
+# GCC for GCC 4.2
+alias gcc="gcc-4.2"
+
 # Sublime Text
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
@@ -107,7 +110,7 @@ alias spoton="sudo mdutil -a -i on"
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
-#alias map="xargs -n1"
+alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
