@@ -27,7 +27,7 @@ brew install homebrew/dupes/grep
 brew install git
 brew install imagemagick
 brew install tree
-brew install rbenv
+brew install rbenv ruby-build
 #install node
 #install lynx
 #install ack
