@@ -20,15 +20,10 @@ brew install vim --override-system-vi
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
-# This formula didn’t work well last time I tried it:
-#install homebrew/dupes/screen
-
 # Install other useful binaries
 brew install git
 brew install imagemagick
 brew install tree
-brew install rbenv ruby-build
-brew install pyenv
 #install node
 #install lynx
 #install ack
@@ -39,6 +34,10 @@ brew install z
 
 # Haskell
 brew install haskell-platform
+
+# Ruby and Python environment managers
+brew install rbenv ruby-build
+brew install pyenv
 
 # Remove outdated versions from the cellar
 brew cleanup
