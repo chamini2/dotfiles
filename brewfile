@@ -28,6 +28,7 @@ brew install git
 brew install imagemagick
 brew install tree
 brew install rbenv ruby-build
+brew install pyenv
 #install node
 #install lynx
 #install ack
