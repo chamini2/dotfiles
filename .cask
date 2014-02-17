@@ -6,6 +6,7 @@ function installcask() {
 	brew cask install "${@}"
 }
 
+installcask android-file-transfer
 installcask rcdefaultapp
 installcask daisydisk
 installcask dropbox
@@ -23,3 +24,4 @@ installcask spectacle
 installcask transmission
 installcask virtualbox
 installcask vlc
+installcask pandoc
