@@ -2,13 +2,13 @@
 alias ..="cd .."
 
 # Shortcuts
-alias d="cd ~/Dropbox"
+alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 #alias p="cd ~/Projects"
 alias g="git"
-alias s="subl ."
-alias o="open"
+#alias s="subl ." #.functions/function s()
+#alias o="open" #.functions/function o()
 
 # GCC for GCC-4.2
 alias gcc="gcc-4.2"
