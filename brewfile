@@ -4,6 +4,13 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+# Git
+brew install git
+# Vim files
+git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
+
+
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -21,16 +28,15 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 # Install other useful binaries
-brew install git
 brew install imagemagick
 brew install tree
-#install node
-#install lynx
-#install ack
+# install node
+# install lynx
+# install ack
 
 # https://github.com/rupa/z or cdargs
 brew install z
-#install cdargs
+# install cdargs
 
 # Haskell
 brew install haskell-platform

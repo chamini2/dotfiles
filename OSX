@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 
 # ~/.osx — http://sow.so/osx
 
 # Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+# Keep-alive: update existing `sudo` time stamp until `OSX` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
@@ -41,13 +41,13 @@ defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Set highlight color to green
-#defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
+defaults write NSGlobalDomain AppleHighlightColor -string "0.58203125 0.91015625 0.5703125"
 
 # Set sidebar icon size to medium
 # defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
-# Always show scrollbars
-# defaults write NSGlobalDomain AppleShowScrollBars -string "Automatic"
+# Only show scrollbars when scrolling
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable smooth scrolling
@@ -94,7 +94,7 @@ defaults write com.apple.helpviewer DevMode -bool true
 # Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)
 # Commented out, as this is known to cause problems in various Adobe apps :(
 # See https://github.com/mathiasbynens/dotfiles/issues/237
-#echo "0x08000100:0" > ~/.CFUserTextEncoding
+# echo "0x08000100:0" > ~/.CFUserTextEncoding
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
@@ -192,7 +192,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `systemsetup -listtimezones` for other values
-# systemsetup -settimezone "Europe/Brussels" > /dev/null
+systemsetup -settimezone "America/Caracas" > /dev/null
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -235,8 +235,8 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-# defaults write com.apple.finder NewWindowTarget -string "PfLo"
-# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -295,8 +295,11 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Show item info to the right of the icons on the desktop
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:labelOnBottom false" ~/Library/Preferences/com.apple.finder.plist
 
-# Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# Arrange by kind on the desktop
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy kind" ~/Library/Preferences/com.apple.finder.plist
+
+
+# Enable snap-to-grid for icons in other icon views
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
@@ -345,7 +348,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+# defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 48
@@ -383,6 +386,8 @@ defaults write com.apple.dock launchanim -bool false
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
@@ -390,9 +395,6 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 # Enable the 2D Dock
 # defaults write com.apple.dock no-glass -bool true
-
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 # defaults write com.apple.dock showhidden -bool true
@@ -474,25 +476,25 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ###############################################################################
 
 # Disable send and reply animations in Mail.app
-#defaults write com.apple.mail DisableReplyAnimations -bool true
-#defaults write com.apple.mail DisableSendAnimations -bool true
+# defaults write com.apple.mail DisableReplyAnimations -bool true
+# defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-#defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+# defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-#defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+# defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
 # Display emails in threaded mode, sorted by date (oldest at the top)
-#defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
-#defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
-#defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+# defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
 
 # Disable inline attachments (just show the icons)
-#defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+# defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Disable automatic spell checking
-#defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
+# defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 ###############################################################################
 # Spotlight                                                                   #
@@ -649,13 +651,13 @@ defaults write com.google.Chrome ExtensionInstallSources -array "https://*.githu
 ###############################################################################
 
 # Install Sublime Text settings
-cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+cp -r "init/Preferences.sublime-settings" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings" 2> /dev/null
 
 # Install Sublime Text key bindings
 cp -r "init/Default\ (OSX).sublime-keymap" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Default\ (OSX).sublime-keymap" 2> /dev/null
 
 # Install Sublime Text console.log snippet
-# cp -r init/console_log.sublime-snippet ~/Library/Application\ Support/Sublime\ Text*/Packages/User/console_log.sublime-snippet 2> /dev/null
+# cp -r "init/console_log.sublime-snippet" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/console_log.sublime-snippet" 2> /dev/null
 
 ###############################################################################
 # Transmission.app                                                            #
@@ -724,18 +726,6 @@ defaults write com.twitter.twitter-mac HideInBackground -bool true
 # Bottom right screen corner → Start screen saver
 # defaults write com.apple.dock wvous-br-corner -int 5
 # defaults write com.apple.dock wvous-br-modifier -int 0
-
-# Spectacle defaults http://spectacleapp.com/
-defaults write com.divisiblebyzero.Spectacle MoveToCenter      -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731119008002100880035c4d6f7665546f43656e746572d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e70727f848f98a1a4adb6c8cbd00000000000000101000000000000001d000000000000000000000000000000d2"
-defaults write com.divisiblebyzero.Spectacle MoveToFullscreen  -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731119008002100380035f10104d6f7665546f46756c6c73637265656ed2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e7072858a959ea7aab3bcced1d60000000000000101000000000000001d000000000000000000000000000000d8"
-defaults write com.divisiblebyzero.Spectacle MoveToLeftHalf    -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731109008002107b80035e4d6f7665546f4c65667448616c66d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e70728186919aa3a6afb8cacdd20000000000000101000000000000001d000000000000000000000000000000d4"
-defaults write com.divisiblebyzero.Spectacle MoveToRightHalf   -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731109008002107c80035f100f4d6f7665546f526967687448616c66d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e70728489949da6a9b2bbcdd0d50000000000000101000000000000001d000000000000000000000000000000d7"
-defaults write com.divisiblebyzero.Spectacle MoveToTopHalf     -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731109008002107e80035d4d6f7665546f546f7048616c66d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e707280859099a2a5aeb7c9ccd10000000000000101000000000000001d000000000000000000000000000000d3"
-defaults write com.divisiblebyzero.Spectacle MoveToBottomHalf  -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731109008002107d80035f10104d6f7665546f426f74746f6d48616c66d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e7072858a959ea7aab3bcced1d60000000000000101000000000000001d000000000000000000000000000000d8"
-defaults write com.divisiblebyzero.Spectacle MoveToUpperLeft   -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731111008002107e80035f100f4d6f7665546f55707065724c656674d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e70728489949da6a9b2bbcdd0d50000000000000101000000000000001d000000000000000000000000000000d7"
-defaults write com.divisiblebyzero.Spectacle MoveToLowerLeft   -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731111008002107b80035f100f4d6f7665546f4c6f7765724c656674d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e70728489949da6a9b2bbcdd0d50000000000000101000000000000001d000000000000000000000000000000d7"
-defaults write com.divisiblebyzero.Spectacle MoveToUpperRight  -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731111008002107c80035f10104d6f7665546f55707065725269676874d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e7072858a959ea7aab3bcced1d60000000000000101000000000000001d000000000000000000000000000000d8"
-defaults write com.divisiblebyzero.Spectacle MoveToLowerRight  -data "62706c6973743030d4010203040506191a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a40708111255246e756c6cd4090a0b0c0d0e0f10596d6f64696669657273546e616d65576b6579436f64655624636c6173731111008002107d80035f10104d6f7665546f4c6f7765725269676874d2131415165a24636c6173736e616d655824636c6173736573585a4b486f744b6579a21718585a4b486f744b6579584e534f626a6563745f100f4e534b657965644172636869766572d11b1c54726f6f74800108111a232d32373c424b555a62696c6e7072858a959ea7aab3bcced1d60000000000000101000000000000001d000000000000000000000000000000d8"
 
 ###############################################################################
 # Kill affected applications                                                  #

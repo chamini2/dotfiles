@@ -150,7 +150,7 @@ function codepoint() {
 }
 
 # `o` with no arguments opens current directory, otherwise opens the given
-# location
+# location/file
 function o() {
 	if [ $# -eq 0 ]; then
 		open .
@@ -159,7 +159,17 @@ function o() {
 	fi
 }
 
-# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# `s` with no arguments opens current directory in Sublime Text,
+# otherwise opens the given location/file
+function s() {
+	if [ $# -eq 0 ]; then
+		subl .
+	else
+		subl "$@"
+	fi
+}
+
+# `treee` is a shorthand for `tree` with hidden files and color enabled, ignoring
 # the `.git` directory, listing directories first. The output gets piped into
 # `less` with options to preserve color and line numbers, unless the output is
 # small enough for one screen.
