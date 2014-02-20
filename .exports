@@ -26,6 +26,9 @@ export GREP_OPTIONS="--color=auto"
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
+# Path to cabal
+export PATH="$PATH:~/.cabal/bin"
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
