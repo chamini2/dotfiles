@@ -41,8 +41,8 @@ brew install tree
 # install ack
 
 # https://github.com/rupa/z or cdargs
-brew install z
-# install cdargs
+# brew install z
+install cdargs
 
 # Haskell
 brew install haskell-platform

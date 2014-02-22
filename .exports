@@ -26,8 +26,11 @@ export GREP_OPTIONS="--color=auto"
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
+# CDargs shell functions
+source "$(brew --cellar cdargs)/1.35/contrib/cdargs-bash.sh"
+
 # Path to cabal
-export PATH="$PATH:~/.cabal/bin"
+export PATH="~/.cabal/bin:$PATH"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
