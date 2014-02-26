@@ -6,6 +6,7 @@ function installcask() {
 	brew cask install "${@}"
 }
 
+installcask all2mp3
 installcask android-file-transfer
 installcask rcdefaultapp
 installcask daisydisk
