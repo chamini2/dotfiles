@@ -32,6 +32,9 @@ source "$(brew --cellar cdargs)/1.35/contrib/cdargs-bash.sh"
 # Path to cabal
 export PATH="~/.cabal/bin:$PATH"
 
+# Path to /usr/local/sbin for some Brew applications (iftop)
+export PATH="/usr/local/sbin:$PATH"
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
