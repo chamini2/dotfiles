@@ -26,5 +26,4 @@ installcask transmission
 installcask virtualbox
 installcask vlc
 installcask pandoc
-# installcask postgresql
 
