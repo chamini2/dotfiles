@@ -6,6 +6,7 @@
 
 # rbenv local version
 .ruby-version
+.rbenv-gemsets
 
 # Folder view configuration files
 .DS_Store
