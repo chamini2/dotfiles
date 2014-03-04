@@ -1,6 +1,12 @@
 # Compiled Python files
 *.pyc
 
+# hdevtools for Haskell linting
+.hdevtools.sock
+
+# rbenv local version
+.ruby-version
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
