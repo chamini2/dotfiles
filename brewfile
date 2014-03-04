@@ -37,13 +37,17 @@ brew install homebrew/dupes/grep
 brew install imagemagick
 brew install tree
 brew install htop-osx
-# install node
-# install lynx
-# install ack
+# brew install node
+# brew install lynx
+# brew install ack
 
 # https://github.com/rupa/z or cdargs
 # brew install z
-install cdargs
+brew install cdargs
+
+# PostgreSQL
+brew install postgresql
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
 # Prolog
 brew install swi-prolog
