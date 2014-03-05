@@ -55,9 +55,5 @@ brew install swi-prolog
 # Haskell
 brew install haskell-platform
 
-# Ruby and Python environment managers
-brew install rbenv ruby-build rbenv-gemsets
-brew install pyenv
-
 # Remove outdated versions from the cellar
 brew cleanup
