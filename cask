@@ -21,9 +21,9 @@ installcask mamp
 installcask picasa
 installcask ps3-media-server
 installcask skype
-installcask spectacle
 installcask transmission
 installcask virtualbox
 installcask vlc
 installcask pandoc
+installcask cinch
 
