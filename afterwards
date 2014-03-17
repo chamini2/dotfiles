@@ -5,9 +5,9 @@ ARCHFLAGS="-arch x86_64" gem install pg
 # Set symlink for Sublime Text
 sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
 
-
-# Vimrc
-wget http://amix.dk/vim/vimrc.txt -o ~/.vimrc
+# vimfiles
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 # In iTerm2 set the following Global Key Shortcuts:
 # alt + delete | send Hex code   | 0x1B 0x08
