@@ -1,13 +1,13 @@
 # Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+# alias ..="cd .."
+# alias ...="cd ../.."
+# alias ....="cd ../../.."
 
 # Shortcuts
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-# alias p="cd ~/Projects"
+alias p="cd ~/Projects"
 alias g="git"
 # alias s="subl ." # .functions/function s()
 # alias o="open" # .functions/function o()
@@ -62,7 +62,7 @@ alias whois="whois -h whois-servers.net"
 # alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+# alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked

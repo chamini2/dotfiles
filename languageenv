@@ -1,3 +1,5 @@
+# consider hsenv
+
 brew install rbenv ruby-build rbenv-gemset
 brew install pyenv pyenv-virtualenv
 

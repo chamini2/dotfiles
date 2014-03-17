@@ -8,22 +8,36 @@ function installcask() {
 
 installcask all2mp3
 installcask android-file-transfer
-installcask rcdefaultapp
 installcask daisydisk
 installcask dropbox
+installcask github
 installcask google-chrome
 installcask google-drive
-installcask igetter
+# installcask igetter
 installcask img2icns
 installcask iterm2
 installcask keka
 installcask mamp
+installcask pandoc
 installcask picasa
 installcask ps3-media-server
+installcask rcdefaultapp
 installcask skype
 installcask transmission
 installcask virtualbox
 installcask vlc
-installcask pandoc
-installcask cinch
 
+#### Download
+# CleanMyMac
+# Kaleidoscope
+# MacDropAny
+# Marked
+# Moom
+# Office
+# Sublime Text 3
+
+#### AppStore
+# iLife
+# iWork
+# Pocket
+# Twitter

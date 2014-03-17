@@ -23,6 +23,3 @@ brew doctor
 
 # Check gems are up to date without installing documentation
 # sudo gem update --system --no-document
-
-# Set symlink for Sublime Text
-sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl

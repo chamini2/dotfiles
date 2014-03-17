@@ -27,7 +27,7 @@ sudo nvram SystemAudioVolume=%00
 # Menu bar: disable transparency
 # defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
-# Menu bar: hide the Time Machine, Volume, User, and Bluetooth icons
+# Menu bar: hide the Time Machine, Volume and User icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
 	defaults write "${domain}" dontAutoLoad -array \
 		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
@@ -44,7 +44,7 @@ defaults write com.apple.systemuiserver menuExtras -array \
 defaults write NSGlobalDomain AppleHighlightColor -string "0.58203125 0.91015625 0.5703125"
 
 # Set sidebar icon size to medium
-# defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Only show scrollbars when scrolling
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
@@ -330,11 +330,11 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 sudo nvram boot-args="mbasd=1"
 
 # Show the ~/Library folder
-# chflags nohidden ~/Library
+chflags nohidden ~/Library
 
 # Remove Dropbox’s green checkmark icons in Finder
-# file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
-# [ -e "$file" ] && mv -f "$file" "$file.bak"
+file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
+[ -e "$file" ] && mv -f "$file" "$file.bak"
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
@@ -371,17 +371,17 @@ defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
-# defaults write com.apple.dock expose-animation-duration -float 0.2
+defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Don’t group windows by application in Mission Control
 # (i.e. use the old Exposé behavior instead)
 # defaults write com.apple.dock expose-group-by-app -bool false
 
 # Disable Dashboard
-# defaults write com.apple.dashboard mcx-disabled -bool true
+defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Don’t show Dashboard as a Space
-# defaults write com.apple.dock dashboard-in-overlay -bool true
+defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -391,7 +391,7 @@ defaults write com.apple.dock autohide -bool true
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.3
 
 # Enable the 2D Dock
 # defaults write com.apple.dock no-glass -bool true
@@ -400,7 +400,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5
 # defaults write com.apple.dock showhidden -bool true
 
 # Reset Launchpad
-# find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
+find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 
 # Add iOS Simulator to Launchpad
 # ln -s /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
@@ -423,14 +423,17 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5
 # 11: Launchpad
 # 12: Notification Center
 # Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
-# defaults write com.apple.dock wvous-tr-corner -int 4
-# defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
-# defaults write com.apple.dock wvous-bl-corner -int 5
-# defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-bl-modifier -int 5
+# Bottom right screen corner → Start screen saver
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -443,7 +446,7 @@ defaults write com.apple.Safari HomePage -string "about:blank"
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Allow hitting the Backspace key to go to the previous page in history
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 # Hide Safari’s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
@@ -507,29 +510,29 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 # sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Change indexing order and disable some file types
-# defaults write com.apple.spotlight orderedItems -array \
-# 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-# 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-# 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-# 	'{"enabled" = 1;"name" = "PDF";}' \
-# 	'{"enabled" = 1;"name" = "FONTS";}' \
-# 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-# 	'{"enabled" = 0;"name" = "MESSAGES";}' \
-# 	'{"enabled" = 0;"name" = "CONTACT";}' \
-# 	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-# 	'{"enabled" = 0;"name" = "IMAGES";}' \
-# 	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-# 	'{"enabled" = 0;"name" = "MUSIC";}' \
-# 	'{"enabled" = 0;"name" = "MOVIES";}' \
-# 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-# 	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-# 	'{"enabled" = 0;"name" = "SOURCE";}'
+defaults write com.apple.spotlight orderedItems -array \
+	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 1;"name" = "PDF";}' \
+	'{"enabled" = 1;"name" = "FONTS";}' \
+	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+	'{"enabled" = 0;"name" = "MESSAGES";}' \
+	'{"enabled" = 0;"name" = "CONTACT";}' \
+	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+	'{"enabled" = 0;"name" = "IMAGES";}' \
+	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+	'{"enabled" = 0;"name" = "MUSIC";}' \
+	'{"enabled" = 0;"name" = "MOVIES";}' \
+	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+	'{"enabled" = 0;"name" = "SOURCE";}'
 # Load new settings before rebuilding the index
-# killall mds
+killall mds
 # Make sure indexing is enabled for the main volume
-# sudo mdutil -i on /
+sudo mdutil -i on /
 # Rebuild the index from scratch
-# sudo mdutil -E /
+sudo mdutil -E /
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -550,7 +553,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 # defaults write org.x.X11 wm_ffm -bool true
 
 # Install pretty iTerm colors
-open "${HOME}/init/Mathias.itermcolors"
+open "${HOME}/init/thayer-Matteo.itermcolors"
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -626,7 +629,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # Disable continuous spell checking
-# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
@@ -651,10 +654,10 @@ defaults write com.google.Chrome ExtensionInstallSources -array "https://*.githu
 ###############################################################################
 
 # Install Sublime Text settings
-cp -r "init/Preferences.sublime-settings" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings" 2> /dev/null
+# cp -r "init/Preferences.sublime-settings" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings" 2> /dev/null
 
 # Install Sublime Text key bindings
-cp -r "init/Default\ (OSX).sublime-keymap" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Default\ (OSX).sublime-keymap" 2> /dev/null
+# cp -r "init/Default\ (OSX).sublime-keymap" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/Default\ (OSX).sublime-keymap" 2> /dev/null
 
 # Install Sublime Text console.log snippet
 # cp -r "init/console_log.sublime-snippet" "~/Library/Application\ Support/Sublime\ Text*/Packages/User/console_log.sublime-snippet" 2> /dev/null

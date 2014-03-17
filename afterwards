@@ -1,2 +1,17 @@
 # After a full installation
 ARCHFLAGS="-arch x86_64" gem install pg
+
+# Visit sublimall.org
+# Set symlink for Sublime Text
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin/subl
+
+
+# Vimrc
+wget http://amix.dk/vim/vimrc.txt -o ~/.vimrc
+
+# In iTerm2 set the following Global Key Shortcuts:
+# alt + delete | send Hex code   | 0x1B 0x08
+# alt + ->     | send escape seq | f
+# alt + <-     | send escape seq | b
+
+# read http://www.vex.net/~trebla/haskell/cabal-cabal.xhtml

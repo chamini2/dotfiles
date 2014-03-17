@@ -1,6 +1,9 @@
 # Compiled Python files
 *.pyc
 
+# Compiled Haskell files
+*.hi
+
 # hdevtools for Haskell linting
 .hdevtools.sock
 

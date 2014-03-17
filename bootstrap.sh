@@ -10,6 +10,12 @@ function doIt() {
 	source ~/.bash_profile
 }
 
+
+function linkIt() {
+    ln -s
+}
+
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
 else

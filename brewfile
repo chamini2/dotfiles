@@ -6,16 +6,6 @@ brew upgrade
 
 # Git
 brew install git
-# Vim files
-if [ ! -d ~/.vim_runtime ]; then
-    git clone https://github.com/amix/vimrc.git ~/.vim_runtime
-else
-    cd ~/.vim_runtime
-    git pull
-    cd -
-fi
-sh ~/.vim_runtime/install_basic_vimrc.sh
-
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
