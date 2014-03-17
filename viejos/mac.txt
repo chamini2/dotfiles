@@ -1,0 +1,123 @@
+System Preferences:
+    Default Apps:
+        http://www.rubicode.com/Software/RCDefaultApp/
+Apps:
+    All2MP3
+    Android File Transfer
+    CleanMyMac 2
+    -DaisyDisk
+        Matteo Ferrando
+        X3TSF4BJ-GZBWAN7B-NMJJMWSZ-8E36C6G9-WZJUK77L
+    -Dropbox
+    -GIT
+    -Google Chrome
+    -Google Drive
+    HandBrake
+    -iGetter
+    -Img2Icns
+    -iTerm
+    iLife: iMovie & iPhoto
+    -Keka
+    MacDropAny
+    -MAMP
+    Microsoft Office | iWork
+    -Picasa
+    Pixelmator
+    Pocket
+    Processing
+    -PS3 Media Server
+    -Skype
+    SoundCloud Downloader
+    -Transmission
+    -VirtualBox
+    -VLC
+    Games:
+        Stabyourself:
+            Trosh
+            Mari0
+            Not Tetris 2
+        Steam:
+            Hotline Miami
+            Dear Esther
+            Thomas Was Alone
+            Portal
+            Proteus
+        GOG:
+            Fallout Series
+        Braid
+        FEZ
+        LIMBO
+        Minecraft
+        Super Meat Boy
+        VVVVVV
+        Papers Please
+
+
+Home:
+        .bash_profile:
+            # 'ls' con color en la salida
+            export CLICOLOR=1
+            export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+            # long history
+            HISTFILESIZE=1000000000
+            HISTSIZE=1000000
+
+            # histo":history-search-backward'
+            bind '"":history-search-forward'
+
+            # GCC bueno
+            # alias gcc='gcc-4.2'
+
+            # ls mejorado, todos y solo directorios
+            alias la='ls -a'
+            alias ll='ls -d */'
+
+            # Sublime Text
+            alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+            export EDITOR=subl
+
+            # cdargs
+            source /usr/local/Cellar/cdargs/1.35/contrib/cdargs-bash.sh
+
+            # Para paquetes de Haskell
+            PATH="$HOME/Library/Haskell/bin:${PATH}"
+            PATH="$HOME/.cabal/bin:${PATH}"
+
+            # Path de Cellar
+            PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
+
+            # Path de todo
+            PATH="/usr/bin:/bin:/sbin:${PATH}"
+
+            # Setting PATH for Python 3.3
+            PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
+
+            # PATH for rbenv
+            PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:${PATH}"
+            eval "$(rbenv init -)"
+
+            # PATH for MySQL
+            PATH="/usr/local/mysql/bin:${PATH}"
+
+            export PATH
+
+
+VIM:
+    $ git clone git://github.com/amix/vimrc .vim_amix
+
+
+
+Sublime Text:
+    http://www.sublimetext.com/
+    http://wbond.net/sublime_packages/package_control
+        Advanced New File
+        AlignTab
+        Emmet
+        Multilang Color Scheme
+        Prolog
+        Schemr
+        The Tree Color Scheme
+        Theme - Brackets
+        ToyChest Color Scheme
+        BracketHighlighter
