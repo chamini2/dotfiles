@@ -5,8 +5,19 @@ cd "$(dirname "${BASH_SOURCE}")"
 git pull origin master
 
 function moveIt() {
-    rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-        --exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+    cp "$PWD/.aliases"      ~/.aliases
+    cp "$PWD/.bash_profile" ~/.bash_profile
+    cp "$PWD/.bash_prompt"  ~/.bash_prompt
+    cp "$PWD/.bashrc"       ~/.bashrc
+    cp "$PWD/.exports"      ~/.exports
+    cp "$PWD/.functions"    ~/.functions
+    cp "$PWD/.gemrc"        ~/.gemrc
+    cp "$PWD/.gitconfig"    ~/.gitconfig
+    cp "$PWD/.gitignore"    ~/.gitignore
+    cp "$PWD/.iftoprc"      ~/.iftoprc
+    cp "$PWD/.inputrc"      ~/.inputrc
+    cp "$PWD/.wgetrc"       ~/.wgetrc
+ 
     source ~/.bash_profile
 }
 
@@ -16,27 +27,27 @@ function removeIt() {
 }
 
 function linkIt() {
-    ln -s .aliases      ~/.aliases
-    ln -s .bash_profile ~/.bash_profile
-    ln -s .bash_prompt  ~/.bash_prompt
-    ln -s .bashrc       ~/.bashrc
-    ln -s .exports      ~/.exports
-    ln -s .functions    ~/.functions
-    ln -s .gemrc        ~/.gemrc
-    ln -s .gitconfig    ~/.gitconfig
-    ln -s .gitignore    ~/.gitignore
-    ln -s .iftoprc      ~/.iftoprc
-    ln -s .inputrc      ~/.inputrc
-    ln -s .wgetrc       ~/.wgetrc
+    ln -s "$PWD/.aliases"      ~/.aliases
+    ln -s "$PWD/.bash_profile" ~/.bash_profile
+    ln -s "$PWD/.bash_prompt"  ~/.bash_prompt
+    ln -s "$PWD/.bashrc"       ~/.bashrc
+    ln -s "$PWD/.exports"      ~/.exports
+    ln -s "$PWD/.functions"    ~/.functions
+    ln -s "$PWD/.gemrc"        ~/.gemrc
+    ln -s "$PWD/.gitconfig"    ~/.gitconfig
+    ln -s "$PWD/.gitignore"    ~/.gitignore
+    ln -s "$PWD/.iftoprc"      ~/.iftoprc
+    ln -s "$PWD/.inputrc"      ~/.inputrc
+    ln -s "$PWD/.wgetrc"       ~/.wgetrc
 }
 
 function doIt() {
 	removeIt
 	
-	if [ git rev-parse --is-inside-git-dir 2> /dev/null ]; then
+	if [ git pull origin master 2> /dev/null ]; then
 		linkIt
 	else
-		moveIt
+		#moveIt
 	fi
 }
 
