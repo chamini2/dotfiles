@@ -34,11 +34,11 @@ function linkIt() {
     ln -s "$PWD/.exports"      ~/.exports
     ln -s "$PWD/.functions"    ~/.functions
     ln -s "$PWD/.gemrc"        ~/.gemrc
-    ln -s "$PWD/.gitconfig"    ~/.gitconfig
     ln -s "$PWD/.gitignore"    ~/.gitignore
     ln -s "$PWD/.iftoprc"      ~/.iftoprc
     ln -s "$PWD/.inputrc"      ~/.inputrc
     ln -s "$PWD/.wgetrc"       ~/.wgetrc
+    cp    "$PWD/.gitconfig"    ~/.gitconfig     # We don't want to put email and name in the repo
 }
 
 function doIt() {
