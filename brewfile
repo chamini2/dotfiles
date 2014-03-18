@@ -49,5 +49,8 @@ brew install swi-prolog
 # Haskell
 brew install haskell-platform
 
+# For Sublime Text's Sublimall
+brew install p7zip
+
 # Remove outdated versions from the cellar
 brew cleanup
