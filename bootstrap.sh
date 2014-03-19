@@ -17,13 +17,17 @@ function moveIt() {
     cp "$PWD/.iftoprc"      ~/.iftoprc
     cp "$PWD/.inputrc"      ~/.inputrc
     cp "$PWD/.wgetrc"       ~/.wgetrc
- 
+
+    mkdir ~/.cabal
+    cp "$PWD/cabalconfig"   ~/.cabal/config
+
     source ~/.bash_profile
 }
 
 function removeIt() {
     rm ~/.aliases ~/.bash_profile ~/.bash_prompt ~/.bashrc ~/.exports\
-        ~/.functions ~/.gemrc ~/.gitconfig ~/.gitignore ~/.iftoprc ~/.inputrc ~/.wgetrc
+        ~/.functions ~/.gemrc ~/.gitconfig ~/.gitignore ~/.iftoprc\
+        ~/.inputrc ~/.wgetrc ~/.cabal/config
 }
 
 function linkIt() {
@@ -38,7 +42,11 @@ function linkIt() {
     ln -s "$PWD/.iftoprc"      ~/.iftoprc
     ln -s "$PWD/.inputrc"      ~/.inputrc
     ln -s "$PWD/.wgetrc"       ~/.wgetrc
-    cp    "$PWD/.gitconfig"    ~/.gitconfig     # We don't want to put email and name in the repo
+    cp    "$PWD/.gitconfig"    ~/.gitconfig   # We don't want to put email and name in the repo
+    
+    mkdir ~/.cabal
+    ln -s "$PWD/cabalconfig"   ~/.cabal/config
+
 }
 
 function doIt() {
