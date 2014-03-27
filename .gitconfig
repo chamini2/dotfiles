@@ -76,6 +76,8 @@
     tool = Kaleidoscope
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[merge]
+    tool = Kaleidoscope
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
     trustExitCode = true
@@ -93,7 +95,7 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 [push]
-	default = matching
+	default = simple
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
