@@ -9,6 +9,7 @@ function moveIt() {
     cp "$PWD/.bash_profile" ~/.bash_profile
     cp "$PWD/.bash_prompt"  ~/.bash_prompt
     cp "$PWD/.bashrc"       ~/.bashrc
+    cp "$PWD/.cdargs"       ~/.cdargs
     cp "$PWD/.exports"      ~/.exports
     cp "$PWD/.functions"    ~/.functions
     cp "$PWD/.gemrc"        ~/.gemrc
@@ -35,6 +36,7 @@ function linkIt() {
     ln -s "$PWD/.bash_profile" ~/.bash_profile
     ln -s "$PWD/.bash_prompt"  ~/.bash_prompt
     ln -s "$PWD/.bashrc"       ~/.bashrc
+    ln -s "$PWD/.cdargs"       ~/.cdargs
     ln -s "$PWD/.exports"      ~/.exports
     ln -s "$PWD/.functions"    ~/.functions
     ln -s "$PWD/.gemrc"        ~/.gemrc
