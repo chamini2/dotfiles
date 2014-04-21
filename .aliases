@@ -12,8 +12,9 @@ alias g="git"
 # alias s="subl ." # .functions/function s()
 # alias o="open" # .functions/function o()
 
-# GCC for GCC-4.2
+# GCC & G++ for GCC-4.2
 alias gcc="gcc-4.2"
+alias g++="g++-4.2"
 
 # Sublime Text
 # alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
