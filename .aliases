@@ -19,6 +19,9 @@ alias g++="g++-4.2"
 # Sublime Text
 # alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
+# use sftp with rlwrap
+alias sftp="rlwrap sftp"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
@@ -76,7 +79,9 @@ command -v md5sum > /dev/null || alias md5sum="md5"
 command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+alias cn="tr -d '\n' | pbcopy"
+# Copy to clipboard without trimming new lines
+alias c="pbcopy"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

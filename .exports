@@ -22,8 +22,9 @@ export MANPAGER="less -X"
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
 
-# Path to rbenv and pyenv
-eval "$(rbenv init -)"
+# Path to RVM and pyenv
+# eval "$(rbenv init -)"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 eval "$(pyenv init -)"
 
 # CDargs shell functions

@@ -12,8 +12,9 @@ brew install git
 brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
-# Install Bash 4
+# Install Bash 4 and auto-completion
 brew install bash
+brew install bash-completion
 
 # Install wget with IRI support
 brew install wget --enable-iri
