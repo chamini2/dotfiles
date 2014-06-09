@@ -53,12 +53,7 @@ function linkIt() {
 
 function doIt() {
 	removeIt
-	
-	if [ git pull origin master 2> /dev/null ]; then
-		linkIt
-	else
-		#moveIt
-	fi
+	linkIt
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
