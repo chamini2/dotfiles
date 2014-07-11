@@ -131,7 +131,7 @@ command -v grunt > /dev/null && alias grunt="grunt --stack"
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
-alias hax="terminal-notifier -sender 'com.apple.ActivityMonitor' -message 'WTF R U DOIN'"
+alias hax="terminal-notifier -sender 'com.apple.ActivityMonitor' -title 'OS X' -message 'WTF R U DOIN'"
 
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
