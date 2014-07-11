@@ -33,11 +33,6 @@ source "$(brew --cellar cdargs)/1.35/contrib/cdargs-bash.sh"
 # Path to cabal
 export PATH="~/.cabal/bin:$PATH"
 
-# Path for Bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
 # Path to /usr/local/sbin for some Brew applications (iftop)
 export PATH="/usr/local/sbin:$PATH"
 
