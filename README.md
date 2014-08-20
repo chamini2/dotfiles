@@ -12,6 +12,6 @@
 
 * `OSX`                       -- OS X configuration
 
-* `.*`                        -- for $HOME
+* `afterwards`                -- last settings
 
 Remember to change `/etc/paths` to make Homebrew's `/usr/local/bin` appear before `/usr/bin`
