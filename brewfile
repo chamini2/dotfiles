@@ -4,14 +4,17 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Git
+# GitHub
 brew install git
+brew install hub
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
+# Install sponge
+brew install moreutils
 # Install Bash 4 and auto-completion
 brew install bash
 brew install bash-completion
@@ -44,14 +47,15 @@ brew install cdargs
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
+# For Sublime Text's Sublimall
+brew install p7zip
+
 # Prolog
 brew install swi-prolog
 
 # Haskell
 brew install haskell-platform
 
-# For Sublime Text's Sublimall
-brew install p7zip
-
 # Remove outdated versions from the cellar
 brew cleanup
+rm -f -r /Library/Caches/Homebrew/*
