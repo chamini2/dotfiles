@@ -8,24 +8,28 @@ function installcask() {
 
 installcask all2mp3
 installcask android-file-transfer
-installcask daisydisk
+installcask atom
+installcask daisydisk # Matteo Ferrando, X3TSF4BJ-GZBWAN7B-NMJJMWSZ-8E36C6G9-WZJUK77L
 installcask dropbox
 installcask github
 installcask google-chrome
 installcask google-drive
-# installcask igetter
 installcask img2icns
 installcask iterm2
 installcask keka
 installcask mamp
 installcask pandoc
 installcask picasa
-installcask ps3-media-server
+installcask qtspim
 installcask rcdefaultapp
 installcask skype
 installcask transmission
 installcask virtualbox
 installcask vlc
+
+# Cleanup
+brew cleanup --force
+rm -f -r /Library/Caches/Homebrew/*
 
 #### Download
 # CleanMyMac
@@ -33,7 +37,8 @@ installcask vlc
 # MacDropAny
 # Marked
 # Moom
-# Office
+# Microsoft Office 2011
+# SoundCloud Downloader
 # Sublime Text 3
 
 #### AppStore
@@ -41,3 +46,42 @@ installcask vlc
 # iWork
 # Pocket
 # Twitter
+
+#### Everything
+# All2MP3
+# Android File Transfer
+# Atom
+# Clean My Mac 2
+# DaisyDisk
+# Dropbox
+# Github
+# Google Chrome
+# Google Drive
+# Img2Icns
+# iMovie
+# iPhoto
+# iTerm
+# Kaleidoscope
+# Keka
+# Keynote
+# MacDropAny
+# MAMP
+# Marked
+# Microsoft Office 2011
+# Moom
+# Numbers
+# Pages
+# Picasa
+# Pixelmator
+# Pocket
+# QtSpim
+# Skype
+# SoundCloud Downloader
+# Sublime Text
+# Transmission
+# Twitter
+# VirtualBox
+# VLC
+# Games
+    # Steam
+    # Diablo III
