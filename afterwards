@@ -2,8 +2,11 @@
 ARCHFLAGS="-arch x86_64" gem install pg
 
 # Set Git credentials
-git config --global user.name "<name> <last>"
-git config --global user.email "<email>"
+read -p "first name: " name
+read -p "last name: " last
+read -p "email: " email
+git config --global user.name "$name $last"
+git config --global user.email "$email"
 
 # Visit sublimall.org
 # Set symlink for Sublime Text
