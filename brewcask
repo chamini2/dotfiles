@@ -18,7 +18,7 @@ installcask img2icns
 installcask iterm2
 installcask keka
 installcask mamp
-installcask pandoc
+installcask pandoc # http://johnmacfarlane.net/pandoc/installing.html
 installcask picasa
 installcask qtspim
 installcask rcdefaultapp
