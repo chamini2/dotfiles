@@ -28,6 +28,7 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 
 # Install other useful binaries
+brew install rlwrap
 brew install imagemagick
 brew install tree
 brew install htop-osx
