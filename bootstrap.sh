@@ -73,7 +73,7 @@ function linkIt() {
     if ! [ -d ~/.cabal ]; then
         mkdir ~/.cabal
     fi
-    ln -s "$PWD/.cabal/config"   ~/.cabal/config
+    ln -s "$PWD/cabal-config"   ~/.cabal/config
 }
 
 function doIt() {
