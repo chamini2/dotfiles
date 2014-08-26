@@ -2,6 +2,9 @@
 
 # ~/.osx — http://sow.so/osx
 
+# Ask for the Computer Name desired
+read -p "ComputerName: " computername
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -13,7 +16,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-read -p "ComputerName: " computername
 sudo scutil --set ComputerName "$computername"
 sudo scutil --set HostName "$computername"
 sudo scutil --set LocalHostName "$computername"
@@ -102,10 +104,10 @@ defaults write com.apple.helpviewer DevMode -bool true
 # sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Restart automatically if the computer freezes
-systemsetup -setrestartfreeze on
+sudo systemsetup -setrestartfreeze on
 
 # Never go into computer sleep mode
-# systemsetup -setcomputersleep on > /dev/null
+# sudo systemsetup -setcomputersleep on > /dev/null
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -193,7 +195,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `systemsetup -listtimezones` for other values
-systemsetup -settimezone "America/Caracas" > /dev/null
+sudo systemsetup -settimezone "America/Caracas" > /dev/null
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
