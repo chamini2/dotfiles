@@ -3,7 +3,7 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 
 function installcask() {
-	brew cask install "${@}"
+    brew cask install "${@}"
 }
 
 installcask all2mp3
