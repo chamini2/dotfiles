@@ -18,9 +18,16 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 ### iTerm2
 # https://github.com/mbadolato/iTerm2-Color-Schemes
 # Global Key Shortcuts:
-# alt + delete | send Hex code   | 0x1B 0x08
-# alt + ->     | send escape seq | f
-# alt + <-     | send escape seq | b
+# ⌘ ⌫     | send Hex code   | 0x15
+# ⌥ ⌫     | send Hex code   | 0x17
+# ⌘ ←     | send Hex code   | 0x01
+# ⌘ →     | send Hex code   | 0x05
+# ⌥ ←     | send escape seq | b
+# ⌥ →     | send escape seq | f
+# ⌃ ⌥ ⌘ ← | Previous Tab
+# ⌃ ⌥ ⌘ → | Next     Tab
+# ⇧ ⌘ ↑   | Scroll Page Up
+# ⇧ ⌘ ↓   | Scroll Page Down
 
 
 
