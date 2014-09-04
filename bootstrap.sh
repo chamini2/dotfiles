@@ -19,8 +19,8 @@ function moveIt() {
     cp "$PWD/.inputrc"      ~/.inputrc
     cp "$PWD/.wgetrc"       ~/.wgetrc
 
-    mkdir ~/.cabal
-    cp "$PWD/cabalconfig"   ~/.cabal/config
+    echo "Put this in ~/.cabal/config"
+    cat "$PWD/cabalconfig"
 
     source ~/.bash_profile
 }
