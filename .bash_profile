@@ -45,6 +45,17 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion
 fi
 
+# Personal autocompletion
+export USER_BASH_COMPLETION_DIR=~/.bash_completion.d
+if [ -d $USER_BASH_COMPLETION_DIR -a -r $USER_BASH_COMPLETION_DIR -a \
+     -x $USER_BASH_COMPLETION_DIR ]; then
+        for i in $USER_BASH_COMPLETION_DIR/*; do
+                [[ ${i##*/} != @(*~|*.bak|*.swp|\#*\#|*.dpkg*|.rpm*) ]] &&
+                        [ \( -f $i -o -h $i \) -a -r $i ] && . $i
+        done
+fi
+unset i
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Bash completion for aliases
