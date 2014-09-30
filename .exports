@@ -37,7 +37,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Path to cabal
-export PATH="~/.cabal/bin:$PATH"
+export PATH="~/.cabal/bin:.cabal-sandbox/bin/:$PATH"
 
 # Path to /usr/local/sbin for some Brew applications (iftop)
 export PATH="/usr/local/sbin:$PATH"
