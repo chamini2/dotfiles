@@ -1,3 +1,4 @@
-library-profiling: True
-shared: True
 documentation: True
+library-profiling: True
+require-sandbox: True
+shared: True
