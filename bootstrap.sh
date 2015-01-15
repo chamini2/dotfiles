@@ -21,6 +21,7 @@ function moveIt() {
 
     echo "Put this in ~/.cabal/config"
     cat "$PWD/cabalconfig"
+    cp "$PWD/.ghci"       ~/.ghci
 
     source ~/.bash_profile
 }
@@ -50,6 +51,7 @@ function removeIt() {
     rm ~/.iftoprc
     rm ~/.inputrc
     rm ~/.wgetrc
+    rm ~/.ghci
 
     rm ~/.cabal/config
 }
@@ -73,7 +75,8 @@ function linkIt() {
     if ! [ -d ~/.cabal ]; then
         mkdir ~/.cabal
     fi
-    ln -s "$PWD/cabal-config"   ~/.cabal/config
+    ln -s "$PWD/.ghci"         ~/.ghci
+    ln -s "$PWD/cabal-config"  ~/.cabal/config
 }
 
 function doIt() {
