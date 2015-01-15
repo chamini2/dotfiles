@@ -45,11 +45,16 @@ brew install cdargs
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
-# Prolog
+# GNU Prolog
 brew install gnu-prolog
 
-# Haskell
+# GHC Haskell
 brew install ghc cabal-install
+
+# GNU Octave
+# brew tap homebrew/science
+# brew install octave
+# Needs Java
 
 # Pandoc (LaTeX, Markdown)
 brew install pandoc
