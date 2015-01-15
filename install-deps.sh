@@ -6,7 +6,7 @@
 
 # homebrew!
 # you need the code CLI tools YOU FOOL.
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
 
 # https://github.com/jeroenbegyn/VLCControl

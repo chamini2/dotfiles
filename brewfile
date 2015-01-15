@@ -5,8 +5,7 @@ brew update
 brew upgrade
 
 # GitHub
-brew install git
-brew install hub
+brew install git hub
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
@@ -14,7 +13,7 @@ brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 # Install sponge
-brew install moreutils
+# brew install moreutils
 # Install Bash 4 and auto-completion
 brew install bash
 brew install bash-completion
@@ -35,27 +34,28 @@ brew install htop-osx
 brew install iftop
 
 # Install other not so usefil binaries
-brew install sl
 # brew install node
 # brew install lynx
 # brew install ack
 
 # https://github.com/rupa/z or cdargs
-# brew install z
 brew install cdargs
 
 # PostgreSQL
 brew install postgresql
 ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
 
-# For Sublime Text's Sublimall
-brew install p7zip
-
 # Prolog
-brew install swi-prolog
+brew install gnu-prolog
 
 # Haskell
-brew install haskell-platform
+brew install ghc cabal-install
+
+# Pandoc (LaTeX, Markdown)
+brew install pandoc
+# Install BasicTex (http://www.tug.org/mactex/morepackages.html) and run these commands
+# sudo tmlgr update --self
+# sudo tlmgr install collection-fontsrecommended
 
 # Remove outdated versions from the cellar
 brew cleanup
